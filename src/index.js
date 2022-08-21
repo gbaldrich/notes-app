@@ -1,4 +1,7 @@
+require('dotenv').config()
+
 const app = require('./server')
+require('./database')
 
 require('./server')
 const port = app.get('port')
