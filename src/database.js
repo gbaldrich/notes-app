@@ -9,3 +9,6 @@ const MONGO_DB = process.env.MONGO_DB
 const mongoURI = `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_HOST}:${MONGO_PORT}/${MONGO_DB}?authSource=admin`
 
 mongoose.connect(mongoURI)
+    .catch(()=>{
+        console.log('Database connected.')
+    })
