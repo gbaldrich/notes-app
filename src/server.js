@@ -1,12 +1,30 @@
 const express = require('express')
-const app = express()
-const port = 3000
+const path = require('path')
+
+
 
 // Initializations
-module.exports = app
+const app = express()
 
 
 // Settings
+app.set('port', process.env.PORT || 4000)
+app.set('views', path.join(__dirname + 'views'))
+
+// Middlewares
+app.use(express.urlencoded({extended: false}))
+
+// Global variables
 
 
-//Middlewares
+// Routes
+app.get('/', (req, res)=>{
+    res.send('Hello World')
+} )
+
+// Static files
+app.use(express.static(path.join(__dirname + 'public')))
+
+
+//___________
+module.exports = app

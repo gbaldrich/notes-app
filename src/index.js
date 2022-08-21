@@ -1,7 +1,7 @@
 const app = require('./server')
 
 require('./server')
-const port = 3000
+const port = app.get('port')
 
 
 app.listen(port, () =>{
